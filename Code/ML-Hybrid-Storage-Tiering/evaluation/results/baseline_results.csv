@@ -1,0 +1,4 @@
+Method,Avg Latency (ms),Migrations,Migration Time (s),False Hotspot Rate,Useful Migration Rate,SSD Utilization
+Static Tiering,4.2768,0,0.0,N/A,N/A,0.1962
+Frequency-Based,3.995,24,18.6169,0.4715,0.3333,0.2112
+Proposed ML,4.1911,5,3.7655,0.3542,0.6000,0.1994

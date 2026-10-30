@@ -1,0 +1,69 @@
+{
+    "experiment_name": "ML-Driven Hybrid Storage Tiering Evaluation",
+    "description": "Comprehensive evaluation of ML-based migration vs baseline methods under simulated storage conditions.",
+    "dataset": {
+        "name": "Synthetic Storage Access Trace",
+        "trace_file": "data/storage_access_trace.csv",
+        "test_file": "data/test.csv",
+        "total_events": 28000,
+        "total_files": 200,
+        "time_span_days": 14,
+        "test_timestamps": 8,
+        "test_rows": 1600
+    },
+    "evaluation_period": {
+        "start": "2026-01-13 00:00:00",
+        "end": "2026-01-14 18:00:00"
+    },
+    "ml_model": {
+        "algorithm": "LinearRegression",
+        "model_file": "models/hotspot_predictor.pkl",
+        "scaler_file": "models/feature_scaler.pkl",
+        "features": [
+            "recent_access_count",
+            "previous_access_count",
+            "recency_seconds",
+            "burstiness",
+            "file_size_bytes",
+            "read_ratio",
+            "write_ratio",
+            "average_request_size",
+            "current_tier"
+        ],
+        "target": "future_access_count"
+    },
+    "thresholds": {
+        "hotspot_access_threshold": 8,
+        "min_payback_ratio_for_evaluation": 0.05,
+        "min_payback_ratio_default": 1.0
+    },
+    "heat_map": {
+        "frequency_weight_alpha": 0.7,
+        "recency_weight_beta": 0.3
+    },
+    "feedback": {
+        "feedback_weight": 0.1,
+        "feedback_scale": 5.0,
+        "bounding_function": "tanh"
+    },
+    "storage_simulation": {
+        "hdd_read_latency_us": 10000.0,
+        "ssd_read_latency_us": 200.0,
+        "hdd_latency_ms": 10.0,
+        "ssd_latency_ms": 0.2,
+        "migration_bandwidth_bytes_per_sec": 104857600,
+        "ssd_capacity_mb": 2048.0,
+        "simulated_max_file_size_mb": 1.0
+    },
+    "execution": {
+        "max_migrations_per_run": 50,
+        "random_seed": 42,
+        "future_window_hours": 6
+    },
+    "notes": [
+        "All latency and bandwidth values are SIMULATION PARAMETERS, not hardware measurements.",
+        "min_payback_ratio is set to 0.05 for evaluation to produce sufficient migration activity.",
+        "The ML model is NOT retrained during feedback processing.",
+        "Configuration parameters are experimental, not claimed as optimal."
+    ]
+}

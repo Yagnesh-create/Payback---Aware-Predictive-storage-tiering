@@ -1,0 +1,63 @@
+{
+    "description": "Temporal 70/15/15 train/validation/test split for hybrid storage tiering ML",
+    "split_ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+    },
+    "feature_columns": [
+        "recent_access_count",
+        "previous_access_count",
+        "recency_seconds",
+        "burstiness",
+        "file_size_bytes",
+        "read_ratio",
+        "write_ratio",
+        "average_request_size",
+        "current_tier"
+    ],
+    "target_column": "future_access_count",
+    "evaluation_only_column": "eval_true_hotspot_next_6h",
+    "scaling_method": "StandardScaler (fitted exclusively on X_train)",
+    "scaler_artifact": "feature_scaler.pkl",
+    "split_statistics": {
+        "total_rows": 10800,
+        "total_timestamps": 54,
+        "train": {
+            "rows": 7600,
+            "percentage": 70.37,
+            "timestamp_count": 38,
+            "min_timestamp": "2026-01-01 12:00:00",
+            "max_timestamp": "2026-01-10 18:00:00",
+            "unique_files": 200,
+            "target_mean": 2.51,
+            "target_median": 1.0,
+            "target_min": 0,
+            "target_max": 133
+        },
+        "validation": {
+            "rows": 1600,
+            "percentage": 14.81,
+            "timestamp_count": 8,
+            "min_timestamp": "2026-01-11 00:00:00",
+            "max_timestamp": "2026-01-12 18:00:00",
+            "unique_files": 200,
+            "target_mean": 2.5,
+            "target_median": 1.0,
+            "target_min": 0,
+            "target_max": 100
+        },
+        "test": {
+            "rows": 1600,
+            "percentage": 14.81,
+            "timestamp_count": 8,
+            "min_timestamp": "2026-01-13 00:00:00",
+            "max_timestamp": "2026-01-14 18:00:00",
+            "unique_files": 200,
+            "target_mean": 2.5,
+            "target_median": 1.0,
+            "target_min": 0,
+            "target_max": 105
+        }
+    }
+}

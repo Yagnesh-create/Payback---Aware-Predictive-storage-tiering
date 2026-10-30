@@ -1,0 +1,6 @@
+Metric,Without Feedback,With Feedback
+False Hotspot Rate,0.3541666666666667,0.3541666666666667
+Useful Migration Rate,0.6,0.6
+Avg Heat Score,0.3022234375,0.2974558092736558
+Unnecessary Migrations,2.0,2.0
+Missed Hotspots,67.0,126.0

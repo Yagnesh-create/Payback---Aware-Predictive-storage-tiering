@@ -1,0 +1,52 @@
+{
+  "ml_model_metrics": {
+    "mae": 716.9111120000001,
+    "rmse": 1000.4286319252964,
+    "r2": -279801.6655611854,
+    "accuracy": 0.3232,
+    "precision": 0.028935185185185185,
+    "recall": 0.78125,
+    "f1_score": 0.055803571428571425,
+    "true_positives": 25,
+    "true_negatives": 379,
+    "false_positives": 839,
+    "false_negatives": 7,
+    "confusion_matrix": [
+      [
+        379,
+        839
+      ],
+      [
+        7,
+        25
+      ]
+    ]
+  },
+  "frequency_baseline_metrics": {
+    "mae": 2.1248,
+    "rmse": 2.6922109872742146,
+    "r2": -1.0262722977176395,
+    "accuracy": 0.9496,
+    "precision": 0.030303030303030304,
+    "recall": 0.03125,
+    "f1_score": 0.03076923076923077,
+    "true_positives": 1,
+    "true_negatives": 1186,
+    "false_positives": 32,
+    "false_negatives": 31,
+    "confusion_matrix": [
+      [
+        1186,
+        32
+      ],
+      [
+        31,
+        1
+      ]
+    ]
+  },
+  "model_retrained": false,
+  "fiu_rows": 1250,
+  "fiu_files": 50,
+  "fiu_timestamps": 25
+}

@@ -1,0 +1,91 @@
+{
+  "ml_metrics": {
+    "mae": 2.0825125000000004,
+    "rmse": 4.267590567287353,
+    "r2": 0.4817392878739374,
+    "accuracy": 0.936875,
+    "precision": 0.6458333333333334,
+    "recall": 0.4806201550387597,
+    "f1_score": 0.5511111111111111,
+    "true_positives": 62,
+    "true_negatives": 1437,
+    "false_positives": 34,
+    "false_negatives": 67
+  },
+  "static_baseline": {
+    "method": "Static Tiering",
+    "avg_latency_us": 4276.8,
+    "avg_latency_ms": 4.276800000000001,
+    "total_latency_us": 17107200.0,
+    "total_accesses": 4000,
+    "migrations": 0,
+    "migration_time_sec": 0.0,
+    "migration_volume_bytes": 0,
+    "false_hotspot_rate": null,
+    "useful_migration_rate": null,
+    "ssd_utilization": 0.19625,
+    "missed_hotspots": 28,
+    "unnecessary_migrations": 0
+  },
+  "frequency_baseline": {
+    "method": "Frequency-Based",
+    "avg_latency_us": 3995.05,
+    "avg_latency_ms": 3.99505,
+    "total_latency_us": 15980200.0,
+    "total_accesses": 4000,
+    "migrations": 24,
+    "migration_time_sec": 18.616895627975463,
+    "migration_volume_bytes": 1952122995,
+    "false_hotspot_rate": 0.4715447154471545,
+    "useful_migration_rate": 0.3333333333333333,
+    "ssd_utilization": 0.21125,
+    "missed_hotspots": 64,
+    "unnecessary_migrations": 16
+  },
+  "proposed_ml": {
+    "method": "Proposed ML",
+    "avg_latency_us": 4191.05,
+    "avg_latency_ms": 4.191050000000001,
+    "total_latency_us": 16764200.0,
+    "total_accesses": 4000,
+    "migrations": 5,
+    "migration_time_sec": 3.7655270957946776,
+    "migration_volume_bytes": 394844134,
+    "false_hotspot_rate": 0.3541666666666667,
+    "useful_migration_rate": 0.6,
+    "ssd_utilization": 0.199375,
+    "missed_hotspots": 67,
+    "unnecessary_migrations": 2
+  },
+  "feedback_summary": {
+    "total_records": 1600,
+    "true_positives": 62,
+    "true_negatives": 1437,
+    "false_positives": 34,
+    "false_negatives": 67,
+    "total_predicted_hotspots": 96,
+    "total_actual_hotspots": 129,
+    "false_hotspot_rate": 0.3541666666666667,
+    "false_hotspot_migration_rate": 0.4,
+    "mean_prediction_error": 0.0022125000000000126,
+    "mean_absolute_error": 2.0825125000000004,
+    "mean_old_heat": 0.3022234375,
+    "mean_updated_heat": 0.2974558092736558,
+    "useful_migrations": 3,
+    "false_hotspot_migrations": 2,
+    "missed_hotspots": 126,
+    "correct_non_migrations": 1469
+  },
+  "payback_metrics": {
+    "avg_payback": 0.05214346944081098,
+    "median_payback": 0.015265886477923441,
+    "min_payback": 0.0,
+    "max_payback": 2.40962262879955,
+    "above_threshold": 334,
+    "below_threshold": 1266
+  },
+  "improvement": {
+    "latency_vs_static_pct": 2.005003741114852,
+    "latency_vs_freq_pct": -4.906071263188195
+  }
+}
